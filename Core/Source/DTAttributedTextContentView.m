@@ -323,7 +323,9 @@ static Class _layerClassToUseForDTAttributedTextContentView = nil;
 					if (existingAttachmentView)
 					{
 						existingAttachmentView.hidden = NO;
-						existingAttachmentView.frame = frameForSubview;
+						CGRect newFrame = existingAttachmentView.frame;
+						newFrame.size = frameForSubview.size;
+						existingAttachmentView.frame = newFrame;
 						
 						existingAttachmentView.alpha = 1;
 						
